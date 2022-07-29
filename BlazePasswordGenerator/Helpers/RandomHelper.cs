@@ -5,7 +5,7 @@ namespace BlazePasswordGenerator.Helpers
 {
 	public class RandomHelper
 	{
-        private Random? random;
+        private readonly Random? random;
 
         public RandomHelper()
         {
@@ -54,7 +54,7 @@ namespace BlazePasswordGenerator.Helpers
 
             if (filters is not null && random is not null)
             {
-                for (int i = 1; i < length; i++)
+                for (int i = 0; i < length; i++)
                 {
                     randomChoice = random!.Next(0, filters.Count);
                     switch (filters[randomChoice])
